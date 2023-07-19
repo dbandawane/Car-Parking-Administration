@@ -15,12 +15,16 @@ Also it has REST Api's for the frontend application(Android, React, Angular, etc
 
 1. Clone the repository:
 
-git clone <repository_url>
+git clone https://gitlab.com/first5060729/car-parking-administration.git
 
 
 2. Navigate to the project directory:
 
-cd car_parking_administration
+- cd car_parking_administration
+- create the virtual environment
+  python -m venv venv
+- Activate the virtual environment:
+  venv\Scripts\activate
 
 
 3. Install the project dependencies:
