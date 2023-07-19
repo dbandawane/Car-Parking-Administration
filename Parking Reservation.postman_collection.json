@@ -1,0 +1,650 @@
+{
+	"info": {
+		"_postman_id": "467710e4-649d-4d6e-9d80-2f9611cc987d",
+		"name": "Parking Reservation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10692896"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "876535676",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "fjnjf1111g@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/parking/api/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"parking",
+						"api",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone_number",
+									"value": "876535676",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fjnjf1111g@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/parking/api/signup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"parking",
+								"api",
+								"signup",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Jul 2023 13:30:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "135"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"phone_number\": \"876535676\",\n        \"email\": \"fjnjfg@gmail.com\",\n        \"created_on\": \"2023-07-19T18:57:29.303363+05:30\"\n    },\n    \"msg\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Parking List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/parking/api/parking-spots/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"parking",
+						"api",
+						"parking-spots",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/parking/api/parking-spots/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"parking",
+								"api",
+								"parking-spots",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Jul 2023 11:50:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1055"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"latitude\": 73.807182,\n        \"longitude\": 73.807182,\n        \"name\": \"Kothrud\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:34:38.833185+05:30\"\n    },\n    {\n        \"id\": 2,\n        \"latitude\": 18.562622,\n        \"longitude\": 73.808723,\n        \"name\": \"Aundh\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:35:08.151648+05:30\"\n    },\n    {\n        \"id\": 3,\n        \"latitude\": 18.550985,\n        \"longitude\": 73.934982,\n        \"name\": \"Kharadi\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:35:45.847570+05:30\"\n    },\n    {\n        \"id\": 4,\n        \"latitude\": 18.477091,\n        \"longitude\": 73.890686,\n        \"name\": \"Kondhwa\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:36:42.270656+05:30\"\n    },\n    {\n        \"id\": 5,\n        \"latitude\": 18.501059,\n        \"longitude\": 73.862686,\n        \"name\": \"Swargate\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:37:18.922588+05:30\"\n    },\n    {\n        \"id\": 6,\n        \"latitude\": 18.559658,\n        \"longitude\": 73.779938,\n        \"name\": \"Baner\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:37:50.503537+05:30\"\n    },\n    {\n        \"id\": 7,\n        \"latitude\": 18.530823,\n        \"longitude\": 73.847466,\n        \"name\": \"Shivajinagar\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:38:26.786820+05:30\"\n    },\n    {\n        \"id\": 8,\n        \"latitude\": 18.566526,\n        \"longitude\": 73.912239,\n        \"name\": \"Viman Nagar\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:39:08.628394+05:30\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Parking Search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "latitude",
+							"value": "18.477091",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "73.890686",
+							"type": "text"
+						},
+						{
+							"key": "radius",
+							"value": "10000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/parking/api/parking-spots/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"parking",
+						"api",
+						"parking-spots",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Parking Search",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "latitude",
+									"value": "18.477091",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "73.890686",
+									"type": "text"
+								},
+								{
+									"key": "radius",
+									"value": "10000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/parking/api/parking-spots/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"parking",
+								"api",
+								"parking-spots",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Jul 2023 12:19:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "531"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"latitude\": 18.550985,\n        \"longitude\": 73.934982,\n        \"name\": \"Kharadi\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:35:45.847570+05:30\"\n    },\n    {\n        \"id\": 4,\n        \"latitude\": 18.477091,\n        \"longitude\": 73.890686,\n        \"name\": \"Kondhwa\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:36:42.270656+05:30\"\n    },\n    {\n        \"id\": 5,\n        \"latitude\": 18.501059,\n        \"longitude\": 73.862686,\n        \"name\": \"Swargate\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:37:18.922588+05:30\"\n    },\n    {\n        \"id\": 7,\n        \"latitude\": 18.530823,\n        \"longitude\": 73.847466,\n        \"name\": \"Shivajinagar\",\n        \"active\": true,\n        \"created_on\": \"2023-07-19T14:38:26.786820+05:30\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Reservation Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hours",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "parking_spot",
+							"value": "8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/parking/api/reservation/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"parking",
+						"api",
+						"reservation",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Parking Search Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hours",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "parking_spot",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/parking/api/reservation/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"parking",
+								"api",
+								"reservation",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Jul 2023 12:23:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7,\n    \"hours\": 2,\n    \"price\": \"10.00\",\n    \"created_on\": \"2023-07-19T17:53:03.006184+05:30\",\n    \"updated_on\": \"2023-07-19T17:53:03.006184+05:30\",\n    \"user\": 1,\n    \"parking_spot\": 8\n}"
+				}
+			]
+		},
+		{
+			"name": "User Reservation List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "hours",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "parking_spot",
+							"value": "8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/parking/api/user-reservations/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"parking",
+						"api",
+						"user-reservations",
+						"3",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reservation Api Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hours",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "parking_spot",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/parking/api/user-reservations/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"parking",
+								"api",
+								"user-reservations",
+								"3",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Jul 2023 12:25:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.8"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "474"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"hours\": 2,\n        \"price\": \"20.00\",\n        \"created_on\": \"2023-07-19T16:39:26.131065+05:30\",\n        \"updated_on\": \"2023-07-19T16:39:26.131065+05:30\",\n        \"user\": 3,\n        \"parking_spot\": 4\n    },\n    {\n        \"id\": 4,\n        \"hours\": 4,\n        \"price\": \"40.00\",\n        \"created_on\": \"2023-07-19T16:42:43.738719+05:30\",\n        \"updated_on\": \"2023-07-19T16:42:43.738719+05:30\",\n        \"user\": 3,\n        \"parking_spot\": 6\n    },\n    {\n        \"id\": 5,\n        \"hours\": 10,\n        \"price\": \"100.00\",\n        \"created_on\": \"2023-07-19T17:09:30.806999+05:30\",\n        \"updated_on\": \"2023-07-19T17:09:30.806999+05:30\",\n        \"user\": 3,\n        \"parking_spot\": 5\n    }\n]"
+				}
+			]
+		}
+	]
+}

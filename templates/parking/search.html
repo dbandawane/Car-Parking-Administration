@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- parking_app/templates/search.html -->
+<form method="POST" action="{% url 'search' %}">
+  {% csrf_token %}
+  <label for="latitude">Latitude:</label>
+  <input type="number" id="latitude" name="latitude" step="0.000001" required>
+  <br>
+  <label for="longitude">Longitude:</label>
+  <input type="number" id="longitude" name="longitude" step="0.000001" required>
+  <br>
+  <label for="radius">Radius (in meters):</label>
+  <input type="number" id="radius" name="radius" required>
+  <br>
+  <input type="submit" value="Search">
+</form>
+
+<h2>Results</h2>
+{% for spot in nearby_spots %}
+  <p>Latitude: {{ spot.latitude }}, Longitude: {{ spot.longitude }} , Name: {{ spot.name }}</p>
+{% empty %}
+  <p>No nearby parking spots found.</p>
+{% endfor %}
+
+</body>
+</html>

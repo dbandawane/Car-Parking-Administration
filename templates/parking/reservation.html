@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+</head>
+<body>
+<div class="row" style="padding:20px 10px;">
+    <div class="col-md-4">
+<h3 class="text-center" style="padding:10px 0px;">Make a Reservation</h3>
+<form method="POST" action="/parking/reservation/{{user}}/{{spot}}/">
+  {% csrf_token %}
+    <div class="mb-3">
+    <label for="hours" class="form-label">Number of Hours:</label>
+    <input type="number" class="form-control" id="hours" name="hours" value="1" required>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Price:</label>
+    <input type="text" class="form-control" id="price" name="price" value="{{price}}" readonly>
+  </div>
+  <button type="submit" class="btn btn-primary">Reserve</button>
+</form>
+    </div>
+    <div class="col-md-1"></div>
+     <div class="col-md-6">
+<h3 class="text-center" style="padding:10px 0px;">My Reservations</h3>
+<div class="table-responsive table-bordered">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+          <th>User</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Hours</th>
+          <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for res in reservations %}
+        <tr>
+          <td>{{ res.user.phone_number }}</td>
+            <td>{{ res.parking_spot.longitude }}</td>
+          <td>{{ res.parking_spot.latitude }}</td>
+            <td>{{ res.parking_spot.name }}</td>
+            <td>{{ res.price }}</td>
+            <td>{{ res.hours }}</td>
+            <td>{{ res.created_on }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="2">No parking spots available.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+        </div>
+    <div class="col-md-2">
+        <br><br><br>
+    <button class="btn btn-secondary"><a href="/parking/parking-spots/{{user}}/" style="color:white;">Back</a></button>
+    </div>
+
+</div>
+
+<script>
+  const hoursInput = document.getElementById('hours');
+  const priceInput = document.getElementById('price');
+
+  // Function to calculate the price
+  function calculatePrice() {
+    const hours = parseInt(hoursInput.value);
+    const ratePerHour = 10; // Set the rate per hour
+    const price = ratePerHour * hours;
+
+    // Update the price field with the calculated price
+    priceInput.value = price.toFixed(2);
+  }
+  hoursInput.addEventListener('input', calculatePrice);
+</script>
+</body>
+</html>
