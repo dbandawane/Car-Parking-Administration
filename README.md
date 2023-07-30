@@ -15,7 +15,7 @@ Also it has REST Api's for the frontend application(Android, React, Angular, etc
 
 1. Clone the repository:
 
-git clone https://gitlab.com/first5060729/car-parking-administration.git
+git clone https://github.com/dbandawane/Car-Parking-Administration.git
 
 
 2. Navigate to the project directory:
